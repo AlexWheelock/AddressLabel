@@ -1,5 +1,13 @@
-﻿Public Class Form1
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles InputGroupBox.Enter
+﻿'Alex Wheelock
+'RCET 0625
+'Spring 2024
+'Address Label Form
+'https://github.com/AlexWheelock/AddressLabel.git
+
+Option Strict On
+Option Explicit On
+Public Class AddressLabelForm
+    Private Sub InputGroupBox_Enter(sender As Object, e As EventArgs) Handles InputGroupBox.Enter
 
     End Sub
 
@@ -51,11 +59,11 @@
 
     End Sub
 
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles OutputGroupBox.Enter
+    Private Sub OutputGroupBox_Enter(sender As Object, e As EventArgs) Handles OutputGroupBox.Enter
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
+    Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
 
     End Sub
 
@@ -63,7 +71,11 @@
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+
+    End Sub
+
+    Private Sub AddressLabelForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
