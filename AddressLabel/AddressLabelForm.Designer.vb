@@ -137,8 +137,10 @@ Partial Class AddressLabelForm
         '
         'StateTextBox
         '
+        Me.StateTextBox.AccessibleDescription = "Enter your state's abbreviation. (ex: California = CA, Idaho = ID, etc.)"
         Me.StateTextBox.Location = New System.Drawing.Point(4, 181)
         Me.StateTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.StateTextBox.MaxLength = 2
         Me.StateTextBox.Name = "StateTextBox"
         Me.StateTextBox.Size = New System.Drawing.Size(78, 20)
         Me.StateTextBox.TabIndex = 4

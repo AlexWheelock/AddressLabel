@@ -76,14 +76,15 @@ Public Class AddressLabelForm
         Else
         End If
 
-        If errorMessage <> "" Then
+        'if there was anything wrong with the inputs then it will give the user an error message.
+        'else it will format the output properly
+        If errorMessage <> "Please enter your:" Then
             errorMessage = (errorMessage & ".")
             MsgBox(errorMessage)
         Else
             message = ($"{firstName} " & $"{lastName}" & vbCrLf _
                         & $"{streetAddress}" & vbCrLf _
                         & $"{city}, " & $"{state} " & $"{zip}")
-
             DisplayLabel.Text = message
         End If
 
