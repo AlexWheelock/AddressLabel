@@ -8,7 +8,7 @@ Option Strict On
 Option Explicit On
 Public Class AddressLabelForm
 
-    'sets all of the text boxes to blank when the clear button is pressed
+    'sets all of the text boxes and the output to blank when the clear button is pressed
     Sub Clear()
         FirstNameTextBox.Text = ""
         LastNameTextBox.Text = ""
@@ -16,9 +16,79 @@ Public Class AddressLabelForm
         CityTextBox.Text = ""
         StateTextBox.Text = ""
         ZipTextBox.Text = ""
+        DisplayLabel.Text = ""
     End Sub
 
-    Sub Output()
+    'compiles the user inputs from the text boxes to the correct mailing format
+    Sub FormatOutput()
+        Dim message As String
+        Dim firstName As String = FirstNameTextBox.Text
+        Dim lastName As String = LastNameTextBox.Text
+        Dim streetAddress As String = StreetAddressTextBox.Text
+        Dim city As String = CityTextBox.Text
+        Dim state As String = UCase(StateTextBox.Text)
+        Dim zip As String = ZipTextBox.Text
+        Dim errorMessage As String = "Please enter your:"
+
+        'determines if the fields have been filled in properly, and compiles the error message
+        If firstName = "" Then
+            errorMessage = (errorMessage & " first name")
+        Else
+        End If
+
+        If lastName = "" Then
+            If errorMessage = "" Then
+                errorMessage = (errorMessage & " last name")
+            Else errorMessage = (errorMessage & ", last name")
+            End If
+        Else
+        End If
+
+        If streetAddress = "" Then
+            If errorMessage = "" Then
+                errorMessage = (errorMessage & " street address")
+            Else errorMessage = (errorMessage & ", street address")
+            End If
+        Else
+        End If
+
+        If city = "" Then
+            If errorMessage = "" Then
+                errorMessage = (errorMessage & " city")
+            Else errorMessage = (errorMessage & ", city")
+            End If
+        Else
+        End If
+
+        If state = "" Then
+            If errorMessage = "" Then
+                errorMessage = (errorMessage & " state")
+            Else errorMessage = (errorMessage & ", state")
+            End If
+        Else
+        End If
+
+        If zip = "" Then
+            If errorMessage = "" Then
+                errorMessage = (errorMessage & " zip code")
+            Else errorMessage = (errorMessage & ", zip code")
+            End If
+        Else
+        End If
+
+        If errorMessage <> "" Then
+            errorMessage = (errorMessage & ".")
+            MsgBox(errorMessage)
+        Else
+            message = ($"{firstName} " & $"{lastName}" & vbCrLf _
+                        & $"{streetAddress}" & vbCrLf _
+                        & $"{city}, " & $"{state} " & $"{zip}")
+
+            DisplayLabel.Text = message
+        End If
+
+
+
 
     End Sub
 
@@ -83,7 +153,7 @@ Public Class AddressLabelForm
     End Sub
 
     Private Sub DisplayButton_Click(sender As Object, e As EventArgs) Handles DisplayButton.Click
-
+        FormatOutput()
     End Sub
 
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click

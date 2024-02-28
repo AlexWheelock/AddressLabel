@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AddressLabelForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AddressLabelForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.InputGroupBox = New System.Windows.Forms.GroupBox()
         Me.ZipLabel = New System.Windows.Forms.Label()
@@ -190,9 +190,10 @@ Partial Class AddressLabelForm
         'DisplayLabel
         '
         Me.DisplayLabel.AutoSize = True
+        Me.DisplayLabel.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DisplayLabel.Location = New System.Drawing.Point(5, 23)
         Me.DisplayLabel.Name = "DisplayLabel"
-        Me.DisplayLabel.Size = New System.Drawing.Size(0, 13)
+        Me.DisplayLabel.Size = New System.Drawing.Size(0, 22)
         Me.DisplayLabel.TabIndex = 0
         '
         'DisplayButton
@@ -217,6 +218,7 @@ Partial Class AddressLabelForm
         '
         'ExitButton
         '
+        Me.ExitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.ExitButton.Location = New System.Drawing.Point(468, 219)
         Me.ExitButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ExitButton.Name = "ExitButton"
@@ -227,8 +229,10 @@ Partial Class AddressLabelForm
         '
         'AddressLabelForm
         '
+        Me.AcceptButton = Me.DisplayButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.ExitButton
         Me.ClientSize = New System.Drawing.Size(568, 287)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.ClearButton)
