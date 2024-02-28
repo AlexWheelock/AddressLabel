@@ -129,6 +129,7 @@ Partial Class AddressLabelForm
         '
         'ZipTextBox
         '
+        Me.ZipTextBox.AccessibleDescription = "Enter your zip code"
         Me.ZipTextBox.Location = New System.Drawing.Point(4, 217)
         Me.ZipTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.ZipTextBox.Name = "ZipTextBox"
@@ -147,6 +148,7 @@ Partial Class AddressLabelForm
         '
         'CityTextBox
         '
+        Me.CityTextBox.AccessibleDescription = "Enter your city"
         Me.CityTextBox.Location = New System.Drawing.Point(4, 145)
         Me.CityTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.CityTextBox.Name = "CityTextBox"
@@ -155,6 +157,7 @@ Partial Class AddressLabelForm
         '
         'StreetAddressTextBox
         '
+        Me.StreetAddressTextBox.AccessibleDescription = "Enter your street address"
         Me.StreetAddressTextBox.Location = New System.Drawing.Point(4, 110)
         Me.StreetAddressTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.StreetAddressTextBox.Name = "StreetAddressTextBox"
@@ -163,6 +166,7 @@ Partial Class AddressLabelForm
         '
         'LastNameTextBox
         '
+        Me.LastNameTextBox.AccessibleDescription = "Enter your last name"
         Me.LastNameTextBox.Location = New System.Drawing.Point(4, 74)
         Me.LastNameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.LastNameTextBox.Name = "LastNameTextBox"
@@ -171,6 +175,7 @@ Partial Class AddressLabelForm
         '
         'FirstNameTextBox
         '
+        Me.FirstNameTextBox.AccessibleDescription = "Enter your first name"
         Me.FirstNameTextBox.Location = New System.Drawing.Point(4, 38)
         Me.FirstNameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.FirstNameTextBox.Name = "FirstNameTextBox"
@@ -192,14 +197,15 @@ Partial Class AddressLabelForm
         'DisplayLabel
         '
         Me.DisplayLabel.AutoSize = True
-        Me.DisplayLabel.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DisplayLabel.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DisplayLabel.Location = New System.Drawing.Point(5, 23)
         Me.DisplayLabel.Name = "DisplayLabel"
-        Me.DisplayLabel.Size = New System.Drawing.Size(0, 22)
+        Me.DisplayLabel.Size = New System.Drawing.Size(0, 21)
         Me.DisplayLabel.TabIndex = 0
         '
         'DisplayButton
         '
+        Me.DisplayButton.AccessibleDescription = "Displays your address label"
         Me.DisplayButton.Location = New System.Drawing.Point(279, 219)
         Me.DisplayButton.Margin = New System.Windows.Forms.Padding(2)
         Me.DisplayButton.Name = "DisplayButton"
@@ -210,6 +216,7 @@ Partial Class AddressLabelForm
         '
         'ClearButton
         '
+        Me.ClearButton.AccessibleDescription = "Clears the text boxes and address label"
         Me.ClearButton.Location = New System.Drawing.Point(374, 219)
         Me.ClearButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ClearButton.Name = "ClearButton"
@@ -220,6 +227,7 @@ Partial Class AddressLabelForm
         '
         'ExitButton
         '
+        Me.ExitButton.AccessibleDescription = "Exit the windows form"
         Me.ExitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.ExitButton.Location = New System.Drawing.Point(468, 219)
         Me.ExitButton.Margin = New System.Windows.Forms.Padding(2)
