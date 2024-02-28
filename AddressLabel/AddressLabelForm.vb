@@ -8,6 +8,7 @@ Option Strict On
 Option Explicit On
 Public Class AddressLabelForm
 
+    'sets all of the text boxes to blank when the clear button is pressed
     Sub Clear()
         FirstNameTextBox.Text = ""
         LastNameTextBox.Text = ""
