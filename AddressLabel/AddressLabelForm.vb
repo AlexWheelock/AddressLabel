@@ -7,6 +7,20 @@
 Option Strict On
 Option Explicit On
 Public Class AddressLabelForm
+
+    Sub Clear()
+        FirstNameTextBox.Text = ""
+        LastNameTextBox.Text = ""
+        StreetAddressTextBox.Text = ""
+        CityTextBox.Text = ""
+        StateTextBox.Text = ""
+        ZipTextBox.Text = ""
+    End Sub
+
+    Sub Output()
+
+    End Sub
+
     Private Sub InputGroupBox_Enter(sender As Object, e As EventArgs) Handles InputGroupBox.Enter
 
     End Sub
@@ -64,7 +78,7 @@ Public Class AddressLabelForm
     End Sub
 
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
-
+        Clear()
     End Sub
 
     Private Sub DisplayButton_Click(sender As Object, e As EventArgs) Handles DisplayButton.Click
@@ -72,10 +86,14 @@ Public Class AddressLabelForm
     End Sub
 
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
-
+        Me.Close()
     End Sub
 
     Private Sub AddressLabelForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub DisplayLabel_Click(sender As Object, e As EventArgs) Handles DisplayLabel.Click
 
     End Sub
 End Class
