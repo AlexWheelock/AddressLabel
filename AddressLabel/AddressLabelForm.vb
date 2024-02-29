@@ -31,6 +31,7 @@ Public Class AddressLabelForm
         Dim streetAddressTest() As String = Split(StreetAddressTextBox.Text)
         Dim streetAddressNumber As Integer = 0
         Dim city As String = CityTextBox.Text
+        Dim cityTest As Integer = 0
         Dim state As String = UCase(StateTextBox.Text)
         Dim zip As String = ZipTextBox.Text
         Dim zipNumberTest As Integer
@@ -74,29 +75,42 @@ Public Class AddressLabelForm
         'checks if there has been a street address entered
         Try
             streetAddressNumber = CInt(streetAddressTest(0))
-            If streetAddressNumber = 0 Then
-                If errorMessage = "Please enter your:" Then
-                    errorMessage = (errorMessage & " valid street address")
-                Else errorMessage = (errorMessage & ", valid street address")
-                End If
-            End If
+
         Catch ex As Exception
-            If streetAddress = "" Then
-                If errorMessage = "Please enter your:" Then
-                    errorMessage = (errorMessage & " street address")
-                Else errorMessage = (errorMessage & ", street address")
+            If streetAddressNumber <= 0 Then
+                If streetAddress = "" Then
+                    If errorMessage = "Please enter your:" Then
+                        errorMessage = (errorMessage & " street address")
+                    Else errorMessage = (errorMessage & ", street address")
+                    End If
+                ElseIf streetaddressnumber <= 0 Then
+                    If errorMessage = "Please enter your:" Then
+                        errorMessage = (errorMessage & " valid street address")
+                    Else errorMessage = (errorMessage & ", valid street address")
+                    End If
                 End If
             End If
         End Try
 
         'checks that a city was entered
-        If city = "" Then
-            If errorMessage = "Please enter your:" Then
-                errorMessage = (errorMessage & " city")
-            Else errorMessage = (errorMessage & ", city"
+        'checks that it is not a number
+        Try
+            cityTest = CInt(city)
+            If cityTest <> 0 Then
+                If errorMessage = "Please enter your:" Then
+                    errorMessage = (errorMessage & " valid city")
+                Else errorMessage = (errorMessage & ", valid city")
+                End If
+            Else
             End If
-        Else
-        End If
+        Catch ex As Exception
+            If city = "" Then
+                If errorMessage = "Please enter your:" Then
+                    errorMessage = (errorMessage & " city")
+                Else errorMessage = (errorMessage & ", city")
+                End If
+            End If
+        End Try
 
         'checks that a state was entered
         If state = "" Then
