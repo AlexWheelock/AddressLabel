@@ -33,6 +33,7 @@ Public Class AddressLabelForm
         Dim city As String = CityTextBox.Text
         Dim cityTest As Integer = 0
         Dim state As String = UCase(StateTextBox.Text)
+        Dim stateTest As Integer = 0
         Dim zip As String = ZipTextBox.Text
         Dim zipNumberTest As Integer
         Dim errorMessage As String = "Please enter your:"
@@ -113,28 +114,43 @@ Public Class AddressLabelForm
         End Try
 
         'checks that a state was entered
-        If state = "" Then
-            If errorMessage = "Please enter your:" Then
-                errorMessage = (errorMessage & " state")
-            Else errorMessage = (errorMessage & ", state")
-            End If
-        Else
-        End If
-
-        'ensures that the zip code entered is an integer, and that one was entered
+        'checks that the state entered is not a number
         Try
-            zipNumberTest = CInt(zip)
-            If zip = "" Then
+            stateTest = CInt(state)
+            If stateTest <> 0 Then
                 If errorMessage = "Please enter your:" Then
-                    errorMessage = (errorMessage & " zip code")
-                Else errorMessage = (errorMessage & ", zip code")
+                    errorMessage = (errorMessage & " valid state")
+                Else errorMessage = (errorMessage & ", valid state")
                 End If
             Else
             End If
         Catch ex As Exception
-            If errorMessage = "Please enter your:" Then
-                errorMessage = (errorMessage & " zip code as a whole number")
-            Else errorMessage = (errorMessage & ", zip code as a whole number")
+            If state = "" Then
+                If errorMessage = "Please enter your:" Then
+                    errorMessage = (errorMessage & " state")
+                Else errorMessage = (errorMessage & ", state")
+                End If
+            End If
+        End Try
+
+        'checks that a zip code was entered
+        'checks that the zip code entered is a number
+        Try
+            zipNumberTest = CInt(zip)
+
+        Catch ex As Exception
+            If zipNumberTest <= 0 Then
+                If zip = "" Then
+                    If errorMessage = "Please enter your:" Then
+                        errorMessage = (errorMessage & " zip code")
+                    Else errorMessage = (errorMessage & ", zip code")
+                    End If
+                ElseIf zipNumberTest <= 0 Then
+                    If errorMessage = "Please enter your:" Then
+                        errorMessage = (errorMessage & " valid zip code")
+                    Else errorMessage = (errorMessage & ", valid zip code")
+                    End If
+                End If
             End If
         End Try
 
